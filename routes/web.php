@@ -2,20 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoriaController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('admin', function () {
-    return view('admin.contenido');
-});
-
-Route::middleware('auth')->group(function () {
-    Route::resource('categoria', CategoriaController::class);
-});
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
